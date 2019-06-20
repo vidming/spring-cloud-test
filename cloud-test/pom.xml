@@ -12,6 +12,7 @@
         <module>dept-api</module>
         <module>dept-consumer</module>
         <module>eureka-server</module>
+        <module>dept-consumer-feign</module>
     </modules>
     <packaging>pom</packaging>
     <properties>

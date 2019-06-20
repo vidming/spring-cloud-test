@@ -1,0 +1,12 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /dept8083
+spring:
+  application:
+    name: dept-feign
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9000/eureka
+      #defaultZone: http://127.0.0.1:9000/eureka,http://127.0.0.1:9001/eureka
