@@ -1,0 +1,29 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: dept-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9000/eureka
+      #defaultZone: http://127.0.0.1:9000/eureka,http://127.0.0.1:9001/eureka
+zuul:
+  prefix: /dept8084
+  routes:
+    dept-server: # 服务名称路径 随意
+      path: /dept8/**
+      serviceId: dept-server
+#    dept-server: /dept/**
+# 开启服务熔断和降级处理
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 6000
+## 配置负载均衡
+#ribbon:
+#  ConnectionTimeout: 500
+#  ReadTimeout: 2000
