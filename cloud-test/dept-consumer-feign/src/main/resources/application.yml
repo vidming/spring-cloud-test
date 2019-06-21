@@ -10,3 +10,11 @@ eureka:
     service-url:
       defaultZone: http://127.0.0.1:9000/eureka
       #defaultZone: http://127.0.0.1:9000/eureka,http://127.0.0.1:9001/eureka
+# 开启服务熔断和降级处理
+feign:
+  hystrix:
+    enabled: true
+# 配置负载均衡
+ribbon:
+  ConnectionTimeout: 500
+  ReadTimeout: 2000

@@ -1,6 +1,7 @@
 package com.bj1901.api.feign_interface;
 
 import com.bj1901.api.domain.Dept;
+import com.bj1901.api.feign_interface.impl.RequestFallBackImpl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +13,7 @@ import java.util.List;
  * @Author: adming
  * @Date: 2019/6/20 0020 16:03
  */
-@FeignClient("dept-server")
+@FeignClient(value = "dept-server", fallback = RequestFallBackImpl.class)
 @RequestMapping("/dept8081")
 public interface RequestInterface {
 

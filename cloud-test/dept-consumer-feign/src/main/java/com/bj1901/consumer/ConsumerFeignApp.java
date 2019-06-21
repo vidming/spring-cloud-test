@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @Author: adming
@@ -14,6 +15,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 // @SpringBootApplication
 
 @EnableFeignClients(basePackages = "com.bj1901.api.feign_interface")
+@ComponentScan(basePackages= {"com.bj1901.api.feign_interface","com.bj1901.consumer"})
 @SpringCloudApplication
 public class ConsumerFeignApp {
 

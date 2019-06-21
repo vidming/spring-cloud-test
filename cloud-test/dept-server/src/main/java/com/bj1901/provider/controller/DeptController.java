@@ -25,6 +25,7 @@ public class DeptController {
     @GetMapping("/findAll")
     @ResponseBody
     public List<Dept> findAll() {
+        //int a = 10/0;
         return  deptService.list();
     }
 
@@ -33,6 +34,12 @@ public class DeptController {
     public Dept findOne(@PathVariable("deptId") Integer deptId) {
         QueryWrapper<Dept>  queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("id", deptId);
+
+        Dept dept = deptService.getOne(queryWrapper);
+
+        if (dept == null) {
+            throw new RuntimeException("");
+        }
         return  deptService.getOne(queryWrapper);
     }
 
