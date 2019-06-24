@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: dept_config_client
