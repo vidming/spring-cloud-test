@@ -3,13 +3,10 @@ spring:
         active:
            - dev
 ---
-spring:
-    profiles: dev
-    application:
-        name: eureka-server-dev
 server:
   port: 9000
 spring:
+  profiles: dev
   application:
     name: eureka-server-dev
 eureka:
@@ -24,6 +21,8 @@ eureka:
     #prefer-ip-address: true
     #ip-address: 127.0.0.1
 ---
+server:
+  port: 9000
 spring:
     profiles: test
     application:
